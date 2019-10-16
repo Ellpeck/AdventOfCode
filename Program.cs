@@ -99,7 +99,7 @@ namespace AdventOfCode {
             string input;
             using (var stream = new FileInfo($"{year}/Input/{day}.txt").OpenText())
                 input = stream.ReadToEnd();
-            Console.WriteLine($"--- Day {day}: {solution.GetName()} ---");
+            Console.WriteLine($"--- Year {year}, Day {day}: {solution.GetName()} ---");
             PrintPart(1, solution.SolvePart1(input));
             PrintPart(2, solution.SolvePart2(input));
             Console.WriteLine();
