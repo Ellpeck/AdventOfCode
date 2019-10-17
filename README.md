@@ -2,5 +2,5 @@
 My solutions of https://adventofcode.com/
 
 ```
-Usage: dotnet run <[year] | [year]/[day] | latest | all>
+Usage: dotnet run <[year] | [year]/[day] | latest | all | list>
 ```

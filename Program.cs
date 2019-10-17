@@ -37,8 +37,10 @@ namespace AdventOfCode {
                     return;
                 if (SolveAll(arg))
                     return;
+                if (List(arg))
+                    return;
             }
-            Console.WriteLine("Usage: dotnet run <[year] | [year]/[day] | latest | all>");
+            Console.WriteLine("Usage: dotnet run <[year] | [year]/[day] | latest | all | list>");
         }
 
         private static bool SolveAllYear(string arg) {
@@ -89,6 +91,17 @@ namespace AdventOfCode {
                 foreach (var solution in entry.Value) {
                     Solve(solution);
                 }
+            }
+            return true;
+        }
+
+        private static bool List(string arg) {
+            if (!arg.Equals("list"))
+                return false;
+            foreach (var (key, value) in AllSolutions.OrderBy(entry => entry.Key)) {
+                Console.WriteLine($"Year {key}:");
+                foreach (var solution in value)
+                    Console.WriteLine($"  Day {solution.GetDay()}: {solution.GetName()}");
             }
             return true;
         }
